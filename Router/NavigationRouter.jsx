@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Scanner from "../Screens/Scanner";
+import Coupons from "../Screens/Coupons";
 
 class NavigationRouter extends React.Component {
 	constructor(props) {
@@ -31,7 +32,7 @@ class NavigationRouter extends React.Component {
 				/>
 				<Tab.Screen
 					name="List"
-					component={Scanner}
+					component={Coupons}
 					initialParams={params.route.params}
 					options={{
 						tabBarLabel: "Coupons",

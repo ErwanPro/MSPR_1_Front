@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
 
+import { getCouponById } from "../API/Coupon.js";
+
 class Scanner extends React.Component {
 	constructor(props) {
 		super(props);
@@ -17,9 +19,15 @@ class Scanner extends React.Component {
 		this.setState({ cameraPermission: status === "granted" });
 	}
 
-	handleBarCodeScanned = event => {
-		console.log(event.data);
-		this.setState({ scanned: true });
+	handleBarCodeScanned = async event => {
+		const idCoupon = event.data.replace("gs://", "");
+		const coupon = await getCouponById(idCoupon);
+		console.log(coupon);
+		this.setState({ scanned: true }, () => {
+			setTimeout(() => {
+				this.setState({ scanned: false });
+			}, 2000);
+		});
 	};
 
 	render() {

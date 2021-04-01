@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, RefreshControl } from "react-native";
+import { connect } from "react-redux";
 import { getCoupons } from "../API/Coupon";
 import Coupon from "../Components/Coupon";
 
@@ -14,8 +15,8 @@ class Coupons extends React.Component {
 	}
 
 	async componentDidMount() {
-		const coupons = await getCoupons();
-		this.setState({ coupons: coupons });
+		// const coupons = await getCoupons();
+		// this.setState({ coupons: coupons });
 	}
 
 	onRefresh = async () => {
@@ -24,11 +25,11 @@ class Coupons extends React.Component {
 	};
 
 	render() {
-		getCoupons().then(coupon => console.log(coupon));
+		console.log(this.props.coupons);
 		return (
 			<FlatList
 				style={{ backgroundColor: "white" }}
-				data={this.state.coupons}
+				data={this.props.coupons}
 				renderItem={({ item, index }) => <Coupon {...item} />}
 				refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.onRefresh} />}
 				keyExtractor={item => item._id}
@@ -37,4 +38,10 @@ class Coupons extends React.Component {
 	}
 }
 
-export default Coupons;
+const mapStateToProps = state => {
+	return {
+		coupons: state.coupons,
+	};
+};
+
+export default connect(mapStateToProps)(Coupons);

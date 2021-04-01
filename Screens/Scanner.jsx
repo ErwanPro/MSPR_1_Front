@@ -1,5 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { connect } from "react-redux";
+
 import { BarCodeScanner } from "expo-barcode-scanner";
 
 import { getCouponById } from "../API/Coupon.js";
@@ -22,7 +24,12 @@ class Scanner extends React.Component {
 	handleBarCodeScanned = async event => {
 		const idCoupon = event.data.replace("gs://", "");
 		const coupon = await getCouponById(idCoupon);
-		console.log(coupon);
+		coupon.id = coupon._id;
+		delete coupon._id;
+		delete coupon.__v;
+		const action = { type: "ADD_COUPON", ...coupon };
+		console.log(action);
+		this.props.dispatch(action);
 		this.setState({ scanned: true }, () => {
 			setTimeout(() => {
 				this.setState({ scanned: false });
@@ -54,4 +61,10 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default Scanner;
+const mapStateToProps = state => {
+	return {
+		coupons: state.coupons,
+	};
+};
+
+export default connect(mapStateToProps)(Scanner);

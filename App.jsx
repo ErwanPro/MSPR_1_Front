@@ -1,11 +1,15 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import NavigationRouter from "./Router/NavigationRouter";
-import Scanner from "./Screens/Scanner";
+import { store } from "./Store/configureStore";
+import { Provider } from "react-redux";
 
 export default function App() {
-	return <NavigationRouter />;
+	return (
+		<Provider store={store}>
+			<NavigationRouter />
+		</Provider>
+	);
 }
 
 // return (

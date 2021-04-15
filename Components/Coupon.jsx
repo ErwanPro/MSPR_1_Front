@@ -10,9 +10,13 @@ class Coupon extends React.Component {
 		const { libelle, pourcentage, dateValidite } = this.props;
 		return (
 			<View style={styles.container}>
-				<Text style={styles.title}>{libelle}</Text>
-				<Text style={styles.title}>{pourcentage}%</Text>
-				<Text style={styles.title}>{dateValidite}</Text>
+				<View style={styles.percentageContainer}>
+					<Text style={styles.percentage}>{pourcentage}%</Text>
+				</View>
+				<View style={styles.infomationContainer}>
+					<Text style={styles.libelle}>{libelle}</Text>
+					<Text style={styles.date}>expire le {dateValidite}</Text>
+				</View>
 			</View>
 		);
 	}
@@ -21,9 +25,10 @@ class Coupon extends React.Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		flexDirection: "row",
 		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
+		// alignItems: "center",
+		// justifyContent: "center",
 		borderRadius: 20,
 		margin: 15,
 		padding: 10,
@@ -37,19 +42,29 @@ const styles = StyleSheet.create({
 		shadowOpacity: 0.34,
 		shadowRadius: 6.27,
 	},
-	title: {
-		fontSize: 17,
-		fontWeight: "bold",
-		marginVertical: 15,
-	},
-	addressContainer: {
+	infomationContainer: {
+		flex: 2,
+		height: "100%",
+		marginTop: 7,
 		alignItems: "center",
 		justifyContent: "space-between",
-		fontSize: 13,
-		marginBottom: 12,
 	},
-	address: {
-		fontSize: 13,
+	libelle: {
+		fontSize: 20,
+		fontWeight: "bold",
+	},
+	date: {
+		fontSize: 15
+	},
+	percentageContainer: {
+		flex: 1,
+		alignItems: "center",
+		// backgroundColor: "blue",
+	},
+	percentage: {
+		fontSize: 30,
+		fontWeight: "bold",
+		marginVertical: 15,
 	},
 });
 

@@ -10,18 +10,12 @@ class Coupons extends React.Component {
 
 		this.state = {
 			refreshing: false,
-			coupons: [],
 		};
 	}
 
-	async componentDidMount() {
-		// const coupons = await getCoupons();
-		// this.setState({ coupons: coupons });
-	}
-
 	onRefresh = async () => {
-		const coupons = await getCoupons();
-		this.setState({ coupons: coupons, refreshing: false });
+		// const coupons = await getCoupons();
+		// this.setState({ coupons: coupons, refreshing: false });
 	};
 
 	render() {
@@ -30,9 +24,8 @@ class Coupons extends React.Component {
 			<FlatList
 				style={{ backgroundColor: "white" }}
 				data={this.props.coupons}
-				renderItem={({ item, index }) => <Coupon {...item} />}
+				renderItem={({ item }) => <Coupon {...item} key={item._id} />}
 				refreshControl={<RefreshControl refreshing={this.state.refreshing} onRefresh={this.onRefresh} />}
-				keyExtractor={item => item._id}
 			/>
 		);
 	}

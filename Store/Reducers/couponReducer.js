@@ -2,6 +2,12 @@ const initState = {
 	coupons: [],
 };
 
+/**
+ * Fonction qui ajoute un coupon au store global
+ * @param {*} state 
+ * @param {*} action 
+ * @returns state
+ */
 function addCoupon(state, action) {
 	if (!state.coupons.find(coupon => coupon.id === action.id)) {
 		const newCoupon = state.coupons.concat({
@@ -16,6 +22,12 @@ function addCoupon(state, action) {
 	return state;
 }
 
+/**
+ * Fonction qui gère les coupons dans le store
+ * @param {*} state 
+ * @param {*} action 
+ * @returns next state
+ */
 export function couponReducer(state = initState, action) {
 	switch (action.type) {
 		case "ADD_COUPON":

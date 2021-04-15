@@ -8,6 +8,10 @@ import { BarCodeScanner } from "expo-barcode-scanner";
 import { getCouponById } from "../API/Coupon.js";
 
 class Scanner extends React.Component {
+	/**
+	 * 
+	 * @param {*} props 
+	 */
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -17,6 +21,9 @@ class Scanner extends React.Component {
 		};
 	}
 
+	/**
+	 * Demande de permission de la caméra et gestion de l'activation du scanner
+	 */
 	async componentDidMount() {
 		const { status } = await BarCodeScanner.requestPermissionsAsync();
 		this.setState({ cameraPermission: status === "granted" });
@@ -26,15 +33,19 @@ class Scanner extends React.Component {
 		});
 		
 		this.unsubscribeFocus = unsubscribeFocus;
-		// const unsubscribeBlur = this.props.navigation.addListener('blur', () => {
-
-		// });
 	}
 
+	/**
+	 * Gestion de la désactivation du scanner
+	 */
 	componentWillUnmount() {
 		this.unsubscribeFocus();
 	}
 
+	/**
+	 * Traitement de la donnée suite au scan d'un qrCode
+	 * @param {*} event 
+	 */
 	handleBarCodeScanned = async event => {
 		const idCoupon = event.data.replace("gs://", "");
 		try {
@@ -45,7 +56,6 @@ class Scanner extends React.Component {
 			const action = { type: "ADD_COUPON", ...coupon };
 			console.log(action);
 			this.props.dispatch(action);
-			// this.ScanCallBack();
 			this.setState({ scanned: true });
 			this.props.navigation.jumpTo("List");
 		} catch (e) {
@@ -53,14 +63,11 @@ class Scanner extends React.Component {
 		}
 	};
 
-	ScanCallBack = () => {
-		this.setState({ scanned: true }, () => {
-			setTimeout(() => {
-				this.setState({ scanned: false });
-			}, 2000);
-		});
-	}
 
+	/**
+	 * 
+	 * @returns Vue du scanner de qrCode si les permissions sont accordées à l'application
+	 */
 	render() {
 		if (this.state.cameraPermission) {
 			return (
@@ -78,6 +85,9 @@ class Scanner extends React.Component {
 	}
 }
 
+/**
+ * Style CSS de la Vue
+ */
 const styles = StyleSheet.create({
 	barcode: {
 		height: 800,

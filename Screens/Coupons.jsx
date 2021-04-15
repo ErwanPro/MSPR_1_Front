@@ -18,7 +18,7 @@ class Coupons extends React.Component {
 
 	/**
 	 * 
-	 * @returns List de l'ensemble des coupons scannés
+	 * @returns Liste de l'ensemble des coupons scannés
 	 */
 	render() {
 		return (

@@ -8,6 +8,10 @@ import Scanner from "../Screens/Scanner";
 import Coupons from "../Screens/Coupons";
 
 class NavigationRouter extends React.Component {
+	/**
+	 * 
+	 * @param {*} props 
+	 */
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -15,6 +19,11 @@ class NavigationRouter extends React.Component {
 		};
 	}
 
+	/**
+	 * 
+	 * @param {*} params 
+	 * @returns Composant Bottom TabNavigator
+	 */
 	TabNavigator = params => {
 		const Tab = createBottomTabNavigator();
 		return (
@@ -45,6 +54,10 @@ class NavigationRouter extends React.Component {
 		);
 	};
 
+	/**
+	 * 
+	 * @returns Composant Navigation de l'application
+	 */
 	render() {
 		const Stack = createStackNavigator();
 		return (
@@ -57,6 +70,9 @@ class NavigationRouter extends React.Component {
 	}
 }
 
+/**
+ * Style CSS du component
+ */
 const styles = StyleSheet.create({
 	imageTab: {
 		height: 25,

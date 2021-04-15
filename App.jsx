@@ -1,9 +1,12 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
 import NavigationRouter from "./Router/NavigationRouter";
 import { store } from "./Store/configureStore";
 import { Provider } from "react-redux";
 
+/**
+ * Point d'entrée de l'App
+ * @returns Application
+ */
 export default function App() {
 	return (
 		<Provider store={store}>
@@ -11,18 +14,3 @@ export default function App() {
 		</Provider>
 	);
 }
-
-// return (
-//   <View style={styles.container}>
-//     <StatusBar style="auto" />
-//     <Scanner />
-//   </View>
-// );
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
-	},
-});

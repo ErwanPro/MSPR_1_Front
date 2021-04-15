@@ -2,10 +2,18 @@ import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 
 class Coupon extends React.Component {
+	/**
+	 * 
+	 * @param {*} props 
+	 */
 	constructor(props) {
 		super(props);
 	}
 
+	/**
+	 * 
+	 * @returns Composant Coupon scanné par l'utilisateur
+	 */
 	render() {
 		const { libelle, pourcentage, dateValidite } = this.props;
 		return (
@@ -22,6 +30,9 @@ class Coupon extends React.Component {
 	}
 }
 
+/**
+ * Style CSS du component
+ */
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,

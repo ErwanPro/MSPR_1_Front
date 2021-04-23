@@ -1,5 +1,9 @@
 import Constants from "expo-constants";
-const SERVER_ADDR = Constants.manifest.extra.urlServer;
+if (process.env.NODE_ENV == "test") {
+	SERVER_ADDR = process.env.SERVER_ADDR;
+}else {
+	SERVER_ADDR = Constants.manifest.extra.urlServer;
+}
 import axios from "react-native-axios";
 
 /**

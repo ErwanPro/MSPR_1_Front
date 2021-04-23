@@ -7,7 +7,7 @@ import { BarCodeScanner } from "expo-barcode-scanner";
 
 import { getCouponById } from "../API/Coupon.js";
 
-class Scanner extends React.Component {
+export class Scanner extends React.Component {
 	/**
 	 * 
 	 * @param {*} props 

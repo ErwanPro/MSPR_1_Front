@@ -3,7 +3,7 @@ import { FlatList, RefreshControl } from "react-native";
 import { connect } from "react-redux";
 import Coupon from "../Components/Coupon";
 
-class Coupons extends React.Component {
+export class Coupons extends React.Component {
 	/**
 	 * 
 	 * @param {*} props 

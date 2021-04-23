@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Coupons/> With Coupons Should render properly 1`] = `
+<RCTScrollView
+  data={
+    Array [
+      Object {
+        "__v": 0,
+        "_id": "603f51e40f03e30fb0453f85",
+        "dateValidite": "10/03/2021",
+        "libelle": "Chaussures en promo",
+        "pourcentage": "20",
+      },
+      Object {
+        "__v": 0,
+        "_id": "603f51fa0f03e30fb0453f86",
+        "dateValidite": "20/03/2021",
+        "libelle": "Tshirts en promo",
+        "pourcentage": "35",
+      },
+      Object {
+        "__v": 0,
+        "_id": "603f521a0f03e30fb0453f87",
+        "dateValidite": "18/03/2021",
+        "libelle": "Pantalon en promo",
+        "pourcentage": "15",
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  refreshControl={
+    <RefreshControlMock
+      refreshing={false}
+    />
+  }
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  style={
+    Object {
+      "backgroundColor": "white",
+    }
+  }
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <RCTRefreshControl />
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderRadius": 20,
+            "elevation": 10,
+            "flex": 1,
+            "flexDirection": "row",
+            "margin": 15,
+            "padding": 10,
+            "paddingBottom": 15,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 5,
+              "width": 0,
+            },
+            "shadowOpacity": 0.34,
+            "shadowRadius": 6.27,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 30,
+                "fontWeight": "bold",
+                "marginVertical": 15,
+              }
+            }
+          >
+            20
+            %
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 2,
+              "height": "100%",
+              "justifyContent": "space-between",
+              "marginTop": 7,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 20,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Chaussures en promo
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 15,
+              }
+            }
+          >
+            expire le 
+            10/03/2021
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderRadius": 20,
+            "elevation": 10,
+            "flex": 1,
+            "flexDirection": "row",
+            "margin": 15,
+            "padding": 10,
+            "paddingBottom": 15,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 5,
+              "width": 0,
+            },
+            "shadowOpacity": 0.34,
+            "shadowRadius": 6.27,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 30,
+                "fontWeight": "bold",
+                "marginVertical": 15,
+              }
+            }
+          >
+            35
+            %
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 2,
+              "height": "100%",
+              "justifyContent": "space-between",
+              "marginTop": 7,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 20,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Tshirts en promo
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 15,
+              }
+            }
+          >
+            expire le 
+            20/03/2021
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderRadius": 20,
+            "elevation": 10,
+            "flex": 1,
+            "flexDirection": "row",
+            "margin": 15,
+            "padding": 10,
+            "paddingBottom": 15,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 5,
+              "width": 0,
+            },
+            "shadowOpacity": 0.34,
+            "shadowRadius": 6.27,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 30,
+                "fontWeight": "bold",
+                "marginVertical": 15,
+              }
+            }
+          >
+            15
+            %
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 2,
+              "height": "100%",
+              "justifyContent": "space-between",
+              "marginTop": 7,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 20,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Pantalon en promo
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 15,
+              }
+            }
+          >
+            expire le 
+            18/03/2021
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;

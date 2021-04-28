@@ -5,8 +5,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Scanner from "../Screens/Scanner";
+import Coupons from "../Screens/Coupons";
 
 class NavigationRouter extends React.Component {
+	/**
+	 * 
+	 * @param {*} props 
+	 */
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -14,6 +19,11 @@ class NavigationRouter extends React.Component {
 		};
 	}
 
+	/**
+	 * 
+	 * @param {*} params 
+	 * @returns Composant Bottom TabNavigator
+	 */
 	TabNavigator = params => {
 		const Tab = createBottomTabNavigator();
 		return (
@@ -31,7 +41,7 @@ class NavigationRouter extends React.Component {
 				/>
 				<Tab.Screen
 					name="List"
-					component={Scanner}
+					component={Coupons}
 					initialParams={params.route.params}
 					options={{
 						tabBarLabel: "Coupons",
@@ -44,6 +54,10 @@ class NavigationRouter extends React.Component {
 		);
 	};
 
+	/**
+	 * 
+	 * @returns Composant Navigation de l'application
+	 */
 	render() {
 		const Stack = createStackNavigator();
 		return (
@@ -56,6 +70,9 @@ class NavigationRouter extends React.Component {
 	}
 }
 
+/**
+ * Style CSS du component
+ */
 const styles = StyleSheet.create({
 	imageTab: {
 		height: 25,
